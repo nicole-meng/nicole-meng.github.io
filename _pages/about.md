@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='https://www.tufts.edu/'>PhD Candidate @Tufts University</a>. ziyi.meng@tufts.edu. . Electrical and Computer Engineering.
+subtitle: <a href='https://www.tufts.edu/'> PhD Candidate @Tufts University</a>. ziyi.meng@tufts.edu. . Electrical and Computer Engineering.
 
 profile:
   align: right
