@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-A simple inline announcement with Markdown emoji! :sparkles: :smile:
+One first-author paper got accepted at CVPR2025, see y'all in Nashville :smile:
