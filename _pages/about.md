@@ -6,7 +6,7 @@ subtitle: Live dangerously-carefully.
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: nicole.png
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Room 137, Halligan Hall</p>
