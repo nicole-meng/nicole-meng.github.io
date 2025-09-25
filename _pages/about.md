@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Live dangerously-carefully. 
+subtitle: Live dangerously - carefully. 
 
 profile:
   align: right
@@ -26,7 +26,7 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
-Hi! My name is Nicole Meng, a second year CS PhD student at [Tufts university](https://www.tufts.edu/) working in the [Cybersecurity and Knowledge Computing Lab](https://laogroup.ece.tufts.edu/) under [Prof. Yingjie Lao](https://engineering.tufts.edu/cs/people/faculty/yingjie-lao). I received my M.S. in computer science and engineering from [UConn](https://uconn.edu/) under the guidance of [Prof. Caiwen Ding](https://caiwending.github.io/web/home.html). My M.S. was fully funded by both the [USDA-NIFA Agriculture and Food Research Initiative Program](https://www.nifa.usda.gov/grants/programs/agriculture-food-research-initiative) and the [Synchrony Fellowship of Excellence in Cybersecurity](https://cacc.engr.uconn.edu/about/centers/synchrony/). Before that, I received my B.S. from [Brandeis University](https://www.brandeis.edu/), with a triple major in computer science, applied math, and economics. I graduated Brandeis with the highest honors in computer science, and as the sole recipient for the 2023 [Jacque Cohen Award](https://www.brandeis.edu/computer-science/undergraduate/jacques_cohen.html) for research excellence.
+Hi! My name is Nicole Meng, a second year CS PhD student at [Tufts university](https://www.tufts.edu/) working in the [Cybersecurity and Knowledge Computing Lab](https://laogroup.ece.tufts.edu/) under [Prof. Yingjie Lao](https://engineering.tufts.edu/cs/people/faculty/yingjie-lao). I received my M.S. in computer science and engineering from [UConn](https://uconn.edu/) under the guidance of [Prof. Caiwen Ding](https://caiwending.github.io/web/home.html). My M.S. was fully funded by both the [USDA-NIFA Research Program](https://www.nifa.usda.gov/grants/programs/agriculture-food-research-initiative) and the [Synchrony Fellowship of Excellence in Cybersecurity](https://cacc.engr.uconn.edu/about/centers/synchrony/). Before that, I received my B.S. from [Brandeis University](https://www.brandeis.edu/), with a triple major in computer science, applied math, and economics. I graduated Brandeis with the highest honors in computer science, and as the sole recipient for the 2023 [Jacque Cohen Award](https://www.brandeis.edu/computer-science/undergraduate/jacques_cohen.html) for research excellence.
 
 My research focus includes AI security and privacy, generative 3D vision models, and agentic security. In general, I am interested in exploring the security vulnerbilities and privacy concerns of generative vision models, and developing defensive solutions that ensures model robustness. 
 
