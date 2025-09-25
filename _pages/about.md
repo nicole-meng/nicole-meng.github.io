@@ -9,7 +9,6 @@ profile:
   image: Nicole.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Room 137, Halligan Hall</p>
     <p>161 College Avenue</p>
     <p>Medford MA 02155</p>
 
