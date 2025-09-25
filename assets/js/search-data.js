@@ -449,7 +449,7 @@ ninja.data = [{
           title: 'One first-author paper got accepted at CVPR2025, see y’all in Nashville :smile:',
           description: "",
           section: "News",},{id: "news-i-presented-our-il2-nerf-poster-at-cvpr-2025-in-nashville-tn",
-          title: 'I presented our IL2-NeRF poster) at CVPR 2025 in Nashville, TN!',
+          title: 'I presented our IL2-NeRF poster at CVPR 2025 in Nashville, TN!',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
