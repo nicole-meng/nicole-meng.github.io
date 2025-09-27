@@ -398,12 +398,10 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
+            },},{id: "news-i-have-transferred-to-tufts-university-from-uconn",
+          title: 'I have transferred to Tufts University from UConn!',
           description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-one-first-author-paper-got-accepted-at-cvpr2025-see-y-all-in-nashville-smile",
+          section: "News",},{id: "news-one-first-author-paper-got-accepted-at-cvpr2025-see-y-all-in-nashville-smile",
           title: 'One first-author paper got accepted at CVPR2025, see y’all in Nashville :smile:',
           description: "",
           section: "News",},{id: "news-i-presented-our-il2-nerf-poster-at-cvpr-2025-in-nashville-tn",
