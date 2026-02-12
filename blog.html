@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Nicole Meng · Blog</title>
+<meta name="description" content="Nicole Meng. Blog with photos and short notes." />
+
+<style>
+:root{
+  --ink:#14110f;
+  --muted:#5a5146;
+
+  --navy:#0f1f2e;
+  --navy-2:#12263a;
+
+  --cream:#f4efe6;
+  --paper:#fffaf2;
+
+  --gold:#b08a3a;
+  --gold-soft:#d8b76a;
+
+  --max:1100px;
+  --radius:18px;
+  --shadow:0 28px 90px rgba(0,0,0,.18);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  font-family: ui-serif, "Georgia", "Times New Roman", serif;
+  line-height:1.65;
+
+  background:
+    radial-gradient(1200px 900px at 0% 0%, rgba(15,31,46,.10), transparent 60%),
+    radial-gradient(900px 700px at 100% 18%, rgba(176,138,58,.08), transparent 65%),
+    linear-gradient(#efe8dd, #f4efe6);
+}
+
+/* subtle linen paper overlay */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,.025),
+      rgba(0,0,0,.025) 1px,
+      transparent 1px,
+      transparent 6px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,.015),
+      rgba(0,0,0,.015) 1px,
+      transparent 1px,
+      transparent 9px
+    );
+  opacity:.55;
+  mix-blend-mode:multiply;
+  z-index:0;
+}
+
+a{color:inherit}
+
+/* TOPBAR */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(15,31,46,.94);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid rgba(176,138,58,.35);
+}
+.topbar .inner{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:14px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  color:var(--paper);
+}
+.crest{
+  width:32px;
+  height:32px;
+  border:1px solid var(--gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  letter-spacing:1px;
+  color:var(--gold-soft);
+  font-size:14px;
+}
+.brand .name{
+  font-variant:small-caps;
+  letter-spacing:1.4px;
+  font-weight:700;
+}
+
+/* nav */
+nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px 20px;
+  font-variant:small-caps;
+  letter-spacing:1px;
+}
+nav a{
+  color:rgba(255,250,242,.92);
+  text-decoration:none;
+  position:relative;
+  padding:4px 0;
+}
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-3px;
+  width:0%;
+  height:1px;
+  background:var(--gold);
+  transition:width .25s ease;
+}
+nav a:hover{
+  color:var(--gold-soft);
+}
+nav a:hover::after{
+  width:100%;
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  z-index:1;
+  background:linear-gradient(180deg, var(--navy-2), var(--navy));
+  color:var(--paper);
+  border-bottom:1px solid rgba(176,138,58,.28);
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:0;
+  transform:translateX(-50%);
+  width:210px;
+  height:2px;
+  background:var(--gold);
+}
+.hero .inner{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:74px 22px 86px;
+  display:grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap:54px;
+  align-items:center;
+}
+@media(max-width:920px){
+  .hero .inner{grid-template-columns:1fr; text-align:center;}
+}
+
+/* hero typography */
+.hero h1{
+  margin:0;
+  font-size:50px;
+  letter-spacing:2.2px;
+  font-variant:small-caps;
+}
+.hero .tagline{
+  margin-top:14px;
+  font-size:18px;
+  color:rgba(255,250,242,.86);
+}
+
+/* refined contact chips */
+.hero-contacts{
+  margin-top:22px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 12px;
+}
+@media(max-width:920px){
+  .hero-contacts{justify-content:center;}
+}
+.hero-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:8px 13px;
+  border-radius:999px;
+  border:1px solid rgba(176,138,58,.52);
+  background:rgba(255,250,242,.06);
+  color:rgba(255,250,242,.92);
+  text-decoration:none;
+  font-size:13.5px;
+  letter-spacing:.5px;
+}
+.hero-chip:hover{
+  background:rgba(176,138,58,.14);
+}
+.brand{
+  text-decoration:none;
+  color:var(--paper);
+}
+
+.brand::after{
+  display:none !important;
+}
+
+.brand:hover{
+  color:var(--paper);
+}
+
+.brand:hover::after{
+  display:none !important;
+}
+
+.hero-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--gold-soft);
+  box-shadow: 0 0 0 3px rgba(176,138,58,.18);
+}
+
+/* portrait */
+.portrait-wrap{
+  display:flex;
+  justify-content:center;
+}
+@media(max-width:920px){
+  .portrait-wrap{margin-top:22px;}
+}
+.portrait-frame{
+  padding:10px;
+  border:1px solid rgba(176,138,58,.9);
+  background:
+    radial-gradient(700px 240px at 0% 0%, rgba(176,138,58,.14), transparent 55%),
+    rgba(255,250,242,.05);
+  box-shadow:0 34px 85px rgba(0,0,0,.45);
+}
+.portrait-frame img{
+  width:270px;
+  height:auto;
+  display:block;
+  border:5px solid var(--paper);
+  filter:saturate(.92) contrast(1.03);
+}
+
+/* MAIN PANEL */
+.main{
+  position:relative;
+  z-index:1;
+  max-width:var(--max);
+  margin:44px auto 0;
+  padding:70px 58px 92px;
+  background:rgba(244,239,230,.88);
+  border:1px solid rgba(176,138,58,.20);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.main::before{
+  content:"";
+  position:absolute;
+  inset:14px;
+  border:1px solid rgba(176,138,58,.18);
+  border-radius:calc(var(--radius) - 6px);
+  pointer-events:none;
+}
+.main::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:var(--radius);
+  pointer-events:none;
+  background:
+    radial-gradient(900px 500px at 10% 0%, rgba(15,31,46,.05), transparent 60%),
+    radial-gradient(700px 480px at 95% 12%, rgba(176,138,58,.05), transparent 65%);
+  mix-blend-mode:multiply;
+  opacity:.75;
+}
+.main > *{position:relative; z-index:1;}
+
+@media(max-width:920px){
+  .main{
+    margin:30px 14px 0;
+    padding:52px 22px 70px;
+    border-radius:16px;
+  }
+  .main::before{inset:10px;}
+}
+
+/* section styling */
+.section{
+  margin:0 0 64px 0;
+}
+.section:last-child{margin-bottom:0;}
+.section h2{
+  margin:0 0 16px 0;
+  font-size:22px;
+  font-variant:small-caps;
+  letter-spacing:1.6px;
+}
+.section h2::after{
+  content:"";
+  display:block;
+  margin-top:10px;
+  width:74px;
+  height:2px;
+  background:var(--gold);
+}
+
+/* editorial links inside content */
+.main a{
+  color:#1b5e47;
+  text-decoration:none;
+  position:relative;
+  transition:color .25s ease;
+}
+.main a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-3px;
+  width:0%;
+  height:1px;
+  background:var(--gold);
+  transition:width .28s ease;
+}
+.main a:hover{color:#0c1a28;}
+.main a:hover::after{width:100%;}
+
+/* BLOG LISTING: consistent, editorial */
+.blog-list{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:18px;
+  margin-top:10px;
+}
+
+.blog-row{
+  display:grid;
+  grid-template-columns: 210px 1fr;
+  gap:22px;
+  padding:18px 0;
+  border-bottom:1px solid rgba(176,138,58,.18);
+  align-items:start;
+  text-decoration:none;
+  color:inherit;
+}
+
+.blog-row:first-of-type{padding-top:6px;}
+.blog-row:last-of-type{border-bottom:none; padding-bottom:6px;}
+
+.blog-row:hover .blog-row-title{
+  color:#0c1a28;
+}
+
+.blog-row-thumb{
+  border:1px solid rgba(176,138,58,.28);
+  background:rgba(15,31,46,.04);
+  overflow:hidden;
+}
+
+.blog-row-thumb img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  display:block;
+}
+
+.blog-row-meta{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.blog-row-date{
+  font-size:13px;
+  font-variant:small-caps;
+  letter-spacing:.8px;
+  color:rgba(90,81,70,.92);
+}
+
+.blog-row-title{
+  font-size:20px;
+  font-weight:600;
+  line-height:1.35;
+}
+
+.blog-row-excerpt{
+  font-size:15px;
+  color:var(--muted);
+  line-height:1.55;
+}
+
+.blog-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:4px;
+}
+
+.blog-tag{
+  display:inline-flex;
+  padding:4px 10px;
+  border-radius:999px;
+  border:1px solid rgba(176,138,58,.28);
+  background:rgba(255,250,242,.45);
+  font-size:12.5px;
+  letter-spacing:.5px;
+  font-variant:small-caps;
+  color:rgba(90,81,70,.92);
+}
+
+@media(max-width:920px){
+  .blog-row{grid-template-columns:1fr; gap:14px;}
+  .blog-row-thumb img{height:210px;}
+}
+
+/* optional single post layout (anchors like #post-1) */
+.post{
+  padding:28px 0;
+  border-top:1px solid rgba(176,138,58,.18);
+}
+.post:first-of-type{border-top:none; padding-top:6px;}
+
+.post h3{
+  margin:0 0 10px 0;
+  font-size:24px;
+  font-weight:600;
+}
+
+.post .post-date{
+  font-size:13px;
+  font-variant:small-caps;
+  letter-spacing:.8px;
+  color:rgba(90,81,70,.92);
+  margin-bottom:14px;
+}
+
+.post .post-hero{
+  border:1px solid rgba(176,138,58,.28);
+  background:rgba(15,31,46,.04);
+  overflow:hidden;
+  margin:10px 0 18px 0;
+}
+
+.post .post-hero img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  display:block;
+}
+
+@media(max-width:920px){
+  .post .post-hero img{height:260px;}
+}
+
+/* FOOTER */
+footer{
+  margin-top:44px;
+  background:rgba(15,31,46,.96);
+  color:rgba(255,250,242,.82);
+  text-align:center;
+  padding:44px 18px;
+  letter-spacing:.6px;
+  border-top:1px solid rgba(176,138,58,.30);
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <div class="inner">
+    <a href="index.html" class="brand">
+  <div class="crest">NM</div>
+  <div class="name">Nicole Meng</div>
+</a>
+
+    <nav>
+      <a href="index.html#about">About</a>
+      <a href="index.html#news">News</a>
+      <a href="index.html#publications">Publications</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#service">Academic Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#misc">Misc</a>
+    </nav>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="inner">
+    <div>
+      <h1>Blog</h1>
+      <div class="tagline">Photos and short notes from life, travel, and training.</div>
+
+      <div class="hero-contacts" aria-label="blog quick links">
+        <a class="hero-chip" href="index.html" title="Home"><span class="hero-dot"></span><span>Back to home</span></a>
+        <a class="hero-chip" href="#entries" title="Entries"><span class="hero-dot"></span><span>Entries</span></a>
+      </div>
+    </div>
+
+    <!-- <div class="portrait-wrap">
+      <div class="portrait-frame">
+        <img src="Nicole.png" alt="Nicole Meng">
+      </div>
+    </div> -->
+  </div>
+</section>
+
+<main class="main">
+
+  <section class="section" id="entries">
+    <h2>Entries</h2>
+
+    <div class="blog-list">
+
+      <a class="blog-row" href="#post-1">
+        <div class="blog-row-thumb">
+          <img src="blogs/vermont.png" alt="Winter in Vermont">
+        </div>
+        <div class="blog-row-meta">
+          <div class="blog-row-date">2026 · February</div>
+          <div class="blog-row-title">Winter in Vermont</div>
+          <div class="blog-row-excerpt">
+            A weekend in Killington. Ice, altitude, and East Coast edges.
+          </div>
+          <div class="blog-tags">
+            <span class="blog-tag">Skiing</span>
+            <span class="blog-tag">Northeast</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="blog-row" href="#post-2">
+        <div class="blog-row-thumb">
+          <img src="blogs/tennis.png" alt="Training in Boston">
+        </div>
+        <div class="blog-row-meta">
+          <div class="blog-row-date">2026 · January</div>
+          <div class="blog-row-title">On Discipline and Training</div>
+          <div class="blog-row-excerpt">
+            Notes from the court. Small improvements, repeated well.
+          </div>
+          <div class="blog-tags">
+            <span class="blog-tag">Tennis</span>
+            <span class="blog-tag">Training</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- <section class="section" id="posts">
+    <h2>Selected Posts</h2>
+
+    <article class="post" id="post-1">
+      <div class="post-date">2026 · February</div>
+      <h3>Winter in Vermont</h3>
+      <div class="post-hero">
+        <img src="blog1.jpg" alt="Winter in Vermont">
+      </div>
+      <p style="color:var(--muted); margin:0;">
+        Write the short article here. Keep it tight, photo-led, and personal.
+      </p>
+    </article>
+
+    <article class="post" id="post-2">
+      <div class="post-date">2026 · January</div>
+      <h3>On Discipline and Training</h3>
+      <div class="post-hero">
+        <img src="blog2.jpg" alt="Training notes">
+      </div>
+      <p style="color:var(--muted); margin:0;">
+        Short note here. Add a second paragraph if you want, but keep it editorial.
+      </p>
+    </article>
+
+  </section> -->
+
+</main>
+
+<footer>
+  © 2026 Nicole Meng
+</footer>
+
+</body>
+</html>
